@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+    Colors
+    Primary: #482534
+    Secondary: #f2914a
+    Last: #d17d73
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #777;
+}
+
+#header__bottom {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+    bottom: 0;
+}
+
+.header {
+    height: 100vh;
+    background-image: linear-gradient(to left top, #d17c736c, #f2904a6e), url('https://res.cloudinary.com/dqqrgidob/image/upload/v1589421156/gray-bridge-and-trees-814499_jtqrui.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-clip-path: url(#header__bottom);
+    clip-path: url(#header__bottom);
+}
