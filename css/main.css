@@ -31,10 +31,161 @@ body {
 
 .header {
     height: 100vh;
-    background-image: linear-gradient(to left top, #d17c736c, #f2904a6e), url('https://res.cloudinary.com/dqqrgidob/image/upload/v1589421156/gray-bridge-and-trees-814499_jtqrui.jpg');
+    background-image: linear-gradient(to left top, #d17c7386, #f2904a86), url('https://res.cloudinary.com/dqqrgidob/image/upload/v1589421156/gray-bridge-and-trees-814499_jtqrui.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    position: relative;
     -webkit-clip-path: url(#header__bottom);
     clip-path: url(#header__bottom);
+}
+
+.logo__box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 50px;
+}
+
+.heading__primary {
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+
+    backface-visibility: hidden;
+}
+
+.heading__primary__main {
+    display: block;
+    font-weight: 700;
+    font-size: 60px;
+    letter-spacing: 10px;
+    text-align: center;
+    animation: moveDown 1s ease-out;
+}
+
+.heading__primary__sub {
+    display: block;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 17px;
+    animation: moveUp 1s ease-out;
+}
+
+.btn_header {
+    animation: moveUp 1s ease-out .75s;
+    animation-fill-mode: backwards;
+}
+
+.text__box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+@keyframes moveDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    80% {
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    80% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    80% {
+        transform: translateX(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/*  Buttons */
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    transition: all .2s;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
+}
+
+.btn-transparent-white {
+    background: transparent;
+    color: #fff;
+}
+
+.btn::after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.6) scaleY(1.2 );
+    opacity: 0;
 }
